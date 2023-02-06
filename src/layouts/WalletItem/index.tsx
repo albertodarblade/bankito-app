@@ -5,9 +5,9 @@ import { width } from "@mui/system"
 export interface WalleItemProps {
     name: string,
     icon?: string,
-    id: string
+    _id: string
 }
-export default function WalletItem({ id, name, icon }: WalleItemProps) {
+export default function WalletItem({ _id, name, icon }: WalleItemProps) {
 
 
     return <Box sx={{ width: '6rem', height: '6rem', margin: '1rem', background: '#f2f2f2' }} >
