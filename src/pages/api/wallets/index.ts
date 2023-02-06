@@ -1,18 +1,20 @@
 import dbConnect from "@/libs/dbConnect";
-import { IWalletSumary } from "@/types";
 import WalletsModel from '@/models/Wallets';
 import { NextApiRequest, NextApiResponse } from "next";
+import { getUserFromHeaders } from "@/utils/nextUtils";
 const url = require("url");
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { method } = req;
+  const user = getUserFromHeaders(req.headers);
 
   await dbConnect();
 
   switch (method) {
     case "GET":
       try {
-        const wallets = await WalletsModel.getAllWallets();
+
+        const wallets = await WalletsModel.getAllWallets(user);
         res.status(200).json(wallets);
       } catch (error) {
         console.log(error);

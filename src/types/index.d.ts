@@ -1,6 +1,6 @@
 export interface IUser {
     email: string,
-    avatar?: string,
+    image?: string,
     name: string
 }
 

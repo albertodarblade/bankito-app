@@ -16,7 +16,7 @@ const WalletSchema = new Schema<IWallet>({
     balance: Number,
     owners: [{
         email: String,
-        avatar: String,
+        image: String,
         name: String
     }],
     records: [Record]
